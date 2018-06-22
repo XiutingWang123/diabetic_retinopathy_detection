@@ -1,0 +1,17 @@
+\section{Dataset}
+
+The original dataset is provided by EyePACS and can be downloaded from \url{https://www.kaggle.com/c/diabetic-retinopathy-detection/data}. The dataset contains a total of 35,126 labeled RGB images. The image labels indicate the severity level of DR,  which is encoded as 0, 1, 2, 3, and 4, corresponding to \texttt{No DR}, \texttt{Mild DR}, \texttt{Moderate DR}, \texttt{Severe DR},  and \texttt{Proliferative DR}. The distribution of different class of images are show in \tabref{cls_dist}.
+
+\begin{table}[t]
+\centering
+\scriptsize
+\begin{tabular}{|r|r|r|r|r|r|}
+\hline
+Class label & \begin{tabular}[c]{@{}r@{}}0 \\ (No DR)\end{tabular} & \begin{tabular}[c]{@{}r@{}}1 \\ (Mild)\end{tabular} & \begin{tabular}[c]{@{}r@{}}2 \\ (Moderate)\end{tabular} & \begin{tabular}[c]{@{}r@{}}3 \\ (Severe)\end{tabular} & \begin{tabular}[c]{@{}r@{}}4 \\ (Proliferative)\end{tabular} \\ \hline
+Image No. & 25810 & 2443 & 5292 & 873 & 708 \\ \hline
+\end{tabular}
+\caption{The class distribution of EyePACS retinal image dataset}
+\label{cls_dist}
+\end{table}
+
+We firstly drew 500 images from each class randomly, and then performed offline data augmentation. We adopted the following image transformation methods for data augmentation: stretch image, random image rotation, and adjustment of contrast level, hue level and brightness. Given the limited computing resources we have, we performed all the data augmentation against the original sampled images instead of chaining the methods. More specifically, we stretched the image using a ratio that was randomly selected from range 0.8 - 1.5~ (augmentation factor x1), rotated an image by 18 different angles (x18), adjusted the image to two different contrast levels (x2), hue levels (x2), and brightness levels (x2). As a result, we got a total of 65,000 images (including the original images).Then we split the image into train(80\%) and test(20\%) dataset. The validation sets which take 10\% of the train dataset were be randomly selected during model selection.  After augmentation, we resized all the images to 256x256x3 for further use. A example of different versions of a given image is shown in \figref{example}. Note that for CNN training, we also performed on-the-fly data augmentation using the methods supported by the framework we used (Caffe~\cite{jia2014caffe}), which are: mirror and random crop. This could further increase the size of our dataset. 

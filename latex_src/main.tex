@@ -1,0 +1,80 @@
+\def\year{2018}\relax
+%File: formatting-instruction.tex
+\documentclass[letterpaper]{article} %DO NOT CHANGE THIS
+\usepackage{aaai18}  %Required
+\usepackage{times}  %Required
+\usepackage{helvet}  %Required
+\usepackage{courier}  %Required
+\usepackage{url}  %Required
+\usepackage{graphicx}  %Required
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{cuted}
+\usepackage{subfig}
+\frenchspacing  %Required
+\setlength{\pdfpagewidth}{8.5in}  %Required
+\setlength{\pdfpageheight}{11in}  %Required
+
+
+\newcommand{\tabref}[1]{{Table~\ref{#1}}}
+\newcommand{\figref}[1]{{Figure~\ref{#1}}}
+\newcommand{\algref}[1]{{Algorithm~\ref{#1}}}
+\newcommand{\secref}[1]{{\S\ref{#1}}}
+\newcommand{\apref}[1]{{Appendix~\ref{#1}}}
+\newcommand{\bheading}[1]{{\vspace{4pt}\noindent\textbf{#1}}}
+
+\newcommand{\todo}[1]{{\textcolor{red}{[todo: #1]}}}
+
+%PDF Info Is Required:
+  \pdfinfo{
+/Title (2018 Formatting Instructions for Authors Using LaTeX)
+/Author (AAAI Press Staff)}
+\setcounter{secnumdepth}{0}  
+ \begin{document}
+% The file aaai.sty is the style file for AAAI Press 
+% proceedings, working notes, and technical reports.
+%
+\title{Let us try everything: a Qualitative and Quantitative analysis of a Plethora of Machine Learning Methods for Diabetic Retinopathy Detection}
+\author{Xiuting Wang, Abhay Venkatesh, Zhen Qin, Daisy Tao\\
+University of Wisconsin - Madison\\
+}
+
+
+\maketitle
+
+\begin{abstract}
+In this paper we evaluate a plethora of machine learning
+models on the diabetic retinopathy dataset from Kaggle. We
+tackle the classification problem of detecting severity of diabetic
+retinopathy, an eye disease, from pictures of patient’s
+eyeballs. First, we test various traditional machine learning
+methods, such as k-nearest neighbors (KNN) and logistic regression,
+using generic features that have been used in the prior
+image classification tasks, and find that their accuracies only slightly better than a random-guess. Then, we compare
+the efficacy of these traditional methods to four Deep
+Learning algorithms, and observe that two Deep Convolutional Neural
+Networks models, LeNet  and GoogLeNet, can get an accuracy of over 90 percent.  
+
+\end{abstract}
+
+
+\input{intro}
+
+\input{Background}
+
+\input{dataset}
+
+\input{tradml}
+
+\input{cnn}
+
+\input{conclusion}
+
+\bibliographystyle{aaai}
+\bibliography{arts}
+
+
+\end{document}

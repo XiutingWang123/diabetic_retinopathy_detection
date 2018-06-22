@@ -1,0 +1,13 @@
+\section{Conclusion}
+In our project, we conducted a preliminary examination of performance of traditional machine learning models and standard Convolutional Neural Networks on detecting the severity level of diabetic retinopathy using the color fundus photographs of eyes. While using traditional machine learning methods with well-craft, generic features 
+suggested by prior research fail to achieve high accuracies, standard CNN models, GoogleNet and AlexNet, can easily get more than 90\% accuracies with little efforts on feature extraction and parameter tuning. 
+
+Our current implementation treats the CNN model as black box and haven't 
+optimized the parameters for our task. For future work, we would like to explore the 
+features extracted by CNNs and try to use them as inputs to traditional machine 
+learning models. Besides, we would like to examine different ways 
+to improve accuracy, for instance, customizing standard CNN models, developing
+new CNN models, and assembling different CNN models. Another direction is to 
+examine the performance of transfer learning -- using neural network weights from tasks which are related to the specific medical imaging task or other tasks (ImageNet, etc.) to initialize a given CNN model and test against our dataset. 
+The motivation for this is that some works have demonstrated that pre-training models  
+on ImageNet can be used for classification of x-ray images.  

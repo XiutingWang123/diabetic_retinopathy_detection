@@ -1,0 +1,41 @@
+\section{Background}
+\subsection{Related Work}
+Many studies have been conducted on DR classification.\\
+\cite{1} used Random Forests to find the impact of sample size on classifier performance and the possibility of using Random forest generated class conditional probabilities as metrics describing DR risk. They find that RF based models produce much higher classification accuracy than those based on logistic regression. Combining both types of data did not increase accuracy but did increase statistical discrimination of healthy participants who subsequently did or did not have DR events during four years of follow-up.
+
+\cite{2} aims to develop an automated screening system to analyze digital color retinal images for important features of non-proliferative diabetic retinopathy. They draw the conclusion that fully automated computer algorithms were able to detect hard exudates and HMA. This provides an inspiration of feature extraction about this topic.
+
+Then, in \cite{3}, the authors develop a system to automatically detect features of DR in color digital retinal images and evaluate the potential of those features in DR screening. They draw the conclusion that at 94.8$\%$ 
+With the development of deep learning techniques, some papers have applied several deep-learning models to tackle with this problem. Specifically, convolutional neural networks have been applied for automated, quick and precise identification of the disease.
+
+Authors have previously applyed deep learning techniques to improve the accuracy as well as sensitivity of this problem.
+
+For instance, \cite{4} compares the performance of an automated deep learning algorithm compare with manual grading by ophthalmologists for identifying DR. They train a CNN using a retrospective development data set of 128175 retinal images, which were graded 3 to 7 times for diabetic retinopathy, diabetic macular edema, and image gradability by a panel of 54 US licensed ophthalmologists. It found that in 2 validation sets of 9963 images and 1748 images separately, the algorithm performed well in both high sensitivity and high specificity settings.
+
+Another paper,\cite{5}, compares the performance of a deep-learning enhanced algorithm for automated detection of DR, with a different criteria. They use the previously reported consensus reference standard of referable DR, and calculated negative predictive value, area under the curve and confidence intervals to evaluate the model. They find that a deep-learning enhanced algorithm for this problem will achieve significantly better performance than previously reported while using traditional machine learning techniques. In our paper, we add to the growing base of knowledge of deep learning methods in medical imaging.
+
+
+Prior works usually only focus on using retina-specific features, such as diameter of optic disk, microaneurysms, and exudates with ML. They do not use consist datasets, evaluation metrics, or 
+experiment procedures so it's hard to directly compare the efficiency of their methodologies. Besides, 
+the CNN models that have been used are rather ad-hoc. In contrast, we use a consistent dataset and generic, context-independent features for traditional MLs and standard CNN models. We use accuracy as the evaluation metric, which is straightforward and easy-to-understand. Our experiments can better reflect the \emph{portability} of certain features and models, that is, to what extent techniques designed for specific tasks can be applied to broader scenarios. 
+
+\subsection{Convolutional Neural Networks}
+
+As we know, Convolutional Neural Networks (CNNs) have gained remarkable success in computer vision, which is mostly owe to their ability that enables learning rich image representations from large-scale annotated data. In the field of medical image analysis, large amounts if annotated data may be not always available. The number of acquired ground-truth data is sometimes insufficient to train the CNNs without over-fitting and convergence issues from scratch. Hence application of the deep CNNs is a challenge in medical imaging domain.
+
+Several CNN models are used to tackle with this setting in this paper: 
+
+\subsubsection{LeNet}
+LeNet is a type of convolutional neural network that is used to recognize patterns from visual images directly without too much preprocessing. Like most of other neural networks, LeNet adopts the back-propagation algorithm to optimize the parameters and the structure of the neural network, while using convolution layers to capture patterns of different scales\cite{LeNet}.
+
+\subsubsection{AlexNet}
+AlexNet is another type of convolutional neural network. AlexNet has eight layers, where the first five are convolutional layers and the last three are fully connected layers. There are also pooling and activation process in between the eight layers to group the pooled information together. Compared to LeNet, AlexNet can learn patterns that are not so visually obvious\cite{AlexNet}.
+
+\subsubsection{Network in Network}
+Network in Network was developed based on the traditional CNN and made a break through by inventing the inception architecture. It introduces two new concepts: Multi Linear Perceptions Convolution (MLPconv) and Global Average Pooling (GAP). MLPconv is the idea to replace linear filters with filters with different sizes within the receipt field, which allow better feature extraction and higher accuracy. GAP means to create as many activation maps as the classes there at the last layer and average the maps to get the final results. These two ideas reduce parameter numbers and computation complexity significantly \cite{nin}.
+
+\subsubsection{GoogLeNet}
+Inspired by Network in Network, GoogLeNet is a 22 layers deep neural network that utilize 9 inception module, where each module convolves using filters with different sizes that captures both the most accurate details and large scale information of the data. Therefore, GoogLeNet is able to utilize the information more efficiently by covering a larger amount of data while training, but also keep the computational cost at the same level with traditional convolutional neural network.  GoogleNet has less parameters than AlexNet and performs faster and much more accurate\cite{GoogleNet}.
+
+
+
